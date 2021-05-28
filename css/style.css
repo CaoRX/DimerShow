@@ -1,0 +1,79 @@
+.lattice {
+    display: grid;
+    /* border: 1px solid; */
+    position: relative;
+    box-sizing: border-box;
+}
+
+.plaquette {
+    /* background-color: red; */
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    /* opacity: 1.0; */
+}
+
+.vertical-bond {
+    background-color: black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: content-box;
+}
+.horizontal-bond {
+    background-color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    box-sizing: content-box;
+}
+
+.vertical-bond-active {
+    width: 5px;
+    height: 60px;
+    background-color: red;
+    margin-left: -2px;
+    overflow: visible;
+}
+
+.horizontal-bond-active {
+    width: 60px;
+    height: 5px;
+    background-color: red;
+    margin-top: -2px;
+    overflow: visible;
+}
+
+.flip-button {
+    /* vertical-align: middle; */
+    border: 0;
+    padding: 0;
+    /* background: red; */
+    /* margin-top: -2px;
+    margin-left: -2px; */
+    background-image: url(../images/rotate.jpeg);
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+}
+
+.info-area {
+    text-align: center;
+    /* justify-content: center; */
+    display: flex;
+}
+
+.info-text {
+    font-size: 20px;
+}
+.warning-text {
+    color: red;
+}
+
+.size-input-area {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.size-warning {
+    color: red;
+    font-size: 20px;
+}
