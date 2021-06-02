@@ -538,7 +538,33 @@ physicalSubmitButton.addEventListener("click", () => {
     let V = document.getElementById("V-input").value;
     let T = document.getElementById("T-input").value;
     state.setPhysicalParameters(V, T);
-})
+});
+
+let timer = null;
+
+let stepStartButton = document.getElementById("step-start");
+let minimumStep = 0.001;
+stepStartButton.addEventListener("click", () => {
+    let step = parseFloat(document.getElementById("step-time-input").value);
+    // console.log(step);
+    if (step < minimumStep) {
+        document.getElementById("step-warning").innerHTML = `Error: step cannot be lower than ${minimumStep}.`;
+    } else {
+        if (timer) {
+            clearInterval(timer);
+        }
+        timer = setInterval(() => {
+            state.directLoop();
+        }, step * 1000);
+    }
+});
+
+let stepStopButton = document.getElementById("step-stop");
+stepStopButton.addEventListener("click", () => {
+    if (timer) {
+        clearInterval(timer);
+    }
+});
 
 // console.log($("#lattice"));
 
